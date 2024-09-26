@@ -1,0 +1,58 @@
+@import "../utilidades/mixin";
+@import "../utilidades/variables";
+
+/* estilos de valoraciones mobile */
+.valoraciones-main{
+    @include grid;
+    grid-template-rows: 180px 1fr;
+    align-items: center;
+    padding: 1rem;
+    padding-top: 80px;
+    #frase{
+        border: 2px solid $color-llamativo;
+        padding: 1rem;
+        h5{
+            text-align: end;
+        }
+    }
+    #formulario{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        form{
+            display: flex;
+            flex-direction: column;
+            gap: .5rem;
+        }
+    }  
+}
+
+/* estilos de valoraciones tablet */
+@media screen and (min-width:600px){
+    .valoraciones-main{
+        #formulario{
+            h1{
+                width: 50%; 
+            }
+            form{
+                .rellenar{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: .5rem;
+                }
+            }
+        }
+    }
+}
+
+/* estilos de valoraciones desktop */
+@media screen and (min-width:1024px){
+    .valoraciones-main{
+        padding-bottom: 3rem;
+        #formulario{
+            flex-direction: column;
+        }
+    }
+}

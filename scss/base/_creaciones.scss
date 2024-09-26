@@ -1,0 +1,58 @@
+//import
+@import "../utilidades/mixin";
+@import "../utilidades/variables";
+
+/* estilos de creaciones mobile */
+
+.creaciones-main{
+    @include grid;
+    grid-template-rows: 50px repeat(4, 1fr);
+    row-gap: 1.8rem;
+    padding: 1rem;
+    padding-top: 90px;
+    div{
+        display: flex;
+        flex-direction: column;
+        background-image: linear-gradient(to right, $color-terciario, #0F212F) ;
+        padding: 1rem;
+        border-radius: 5%;
+        width: 80%;
+        justify-self: center;
+        align-items: center;
+        gap: 1rem;
+        a{
+            iframe{
+                border: 2px solid $color-llamativo;
+            }
+        }
+    }
+}
+
+/* estilos de creaciones tablet */
+@media screen and (min-width:600px){
+    .creaciones-main{
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 50px repeat(2, 1fr);
+        h1{
+            grid-column: span 2;
+        }
+        div{
+            a{
+                iframe{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+/* estilos de creaciones desktop */
+@media screen and (min-width: 1024px){
+    .creaciones-main{
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 50px 1fr;
+        h1{
+            grid-column: span 4;
+        }
+    }
+}

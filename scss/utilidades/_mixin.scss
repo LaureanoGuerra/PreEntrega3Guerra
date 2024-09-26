@@ -1,0 +1,12 @@
+@mixin flex{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin grid{
+    display: grid;
+    grid-template-columns: 1fr;
+    text-align: center;
+}

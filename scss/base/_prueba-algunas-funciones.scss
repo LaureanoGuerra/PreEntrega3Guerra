@@ -1,0 +1,36 @@
+@import "../utilidades/mixin";
+@import "../utilidades/variables";
+
+/* estilos de prueba algunas funciones mobile */
+
+.funciones-main{
+    @include grid;
+    grid-template-rows: 170px repeat(3, 1fr) 300px;
+    row-gap: 1rem;
+    padding: 1rem;
+    padding-top: 90px;
+    div{
+        @include flex;
+        gap: 1rem;
+        border-top: 2px solid $color-terciario;
+        padding-top: 1rem;
+        #enlaces-img{
+            a{
+                img{
+                    border: none;
+                }
+            }
+        }
+    }
+}
+
+/* estilos prueba algunas funciones tablet */
+@media screen and (min-width:600px){
+    .funciones-main{
+        div{
+            h5{
+                width: 50%;
+            }
+        }
+    }
+}

@@ -1,0 +1,80 @@
+//import
+@import "../utilidades/mixin";
+@import "../utilidades/variables";
+
+/* estilos de index mobile */
+.index-main{
+    @include grid;
+    grid-template-rows: 1fr 300px;
+    .bienvenida{
+        @include flex;
+        padding: 1rem;
+        gap: 1rem;
+        border-bottom: 2px solid $color-terciario;
+        img{
+            width: 50%;
+        }
+    }
+    .explicacion{
+        @include flex;
+        padding: 1rem;
+        iframe{
+            width: 70%;
+            height: 65%;
+        }
+    }
+}
+
+/* estilos de index tablet*/
+@media screen and (min-width:600px){
+    .index-main{
+        grid-template-rows: repeat(2, 1fr);
+        .bienvenida{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat (2, 1fr);
+            h1{
+                grid-column: span 2;
+            justify-self: start;
+            padding-left: 2rem;
+            padding-right: 2rem;
+            text-align: justify;
+            border-right: 2px solid $color-terciario;
+            }
+            img{
+                width: 63%;
+            }
+        }
+    }
+}
+
+/* estilos de index desktop */
+@media screen and (min-width: 1024px){
+    .index-main{
+        .bienvenida{
+            h1{
+                grid-column: span 1;
+                margin-left: 5rem;
+                text-align: start;
+            }
+            img{
+                width: 45%;
+                grid-row: span 2;
+                margin-left: 4rem;
+            }
+            h5{
+                padding-left: 5rem;
+                width: 85%;
+                height: 100%;
+            }
+        }
+        .explicacion{
+            iframe{
+                width: 50%;
+                height: 85%;
+                margin: 1rem;
+                border: 2px solid $color-llamativo;
+            }
+        }
+    }
+}
